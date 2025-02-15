@@ -30,39 +30,43 @@ export const Skills = () => {
 
   return (
     <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>"I'm a web developer skilled in building modern, responsive, and high-performance web applications.
-                          <br></br> My expertise includes frontend development with React.js, Next.js, and Tailwind CSS, and 
-                         <br></br> backend development using Node.js, Express.js. I work with databases like
-                          MongoDB,<br></br> and Firebase, and I have experience deploying applications on Netlify."
-                         <br></br> Let me know if you want any tweaks! 🚀</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Frontend</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Backend</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Databases</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5> Deployment</h5>
-                            </div>
-                        </Carousel>
-                    </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="skill-bx wow zoomIn">
+              <h2>Skills</h2>
+              <p>"I'm a web developer skilled in building modern, responsive, and high-performance web applications.
+                <br></br> My expertise includes frontend development with React.js, Next.js, and Tailwind CSS, and
+                <br></br> backend development using Node.js, Express.js. I work with databases like
+                MongoDB,<br></br> and Firebase, and I have experience deploying applications on Netlify."
+                <br></br> Let me know if you want any tweaks! 🚀</p>
+
+              <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                <div className="item">
+                  <img src={meter1} alt="Frontend Development" />
+                  <h5>Frontend</h5>
                 </div>
+                <div className="item">
+                  <img src={meter2} alt="Backend Development" />
+                  <h5>Backend</h5>
+                </div>
+                <div className="item">
+                  <img src={meter2} alt="Database Management" />
+                  <h5>Databases</h5>
+                </div>
+                <div className="item">
+                  <img src={meter3} alt="Deployment Services" />
+                  <h5>Deployment</h5>
+                </div>
+              </Carousel>
+
+              <img className="background-image-left" src={colorSharp} alt="" />
+
             </div>
+          </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+      </div>
+      <img className="background-image-left" src={colorSharp} alt="Image" />
     </section>
   )
 }
