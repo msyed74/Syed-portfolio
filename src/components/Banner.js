@@ -1,16 +1,15 @@
 import { useState, useEffect, useCallback } from "react";
-// ... other imports
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
   const period = 2000;
 
-  // Use useCallback to memoize the tick function to avoid unnecessary rerenders
+  // Move toRotate array inside useCallback to avoid unnecessary dependencies
   const tick = useCallback(() => {
+    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"]; // Moved inside useCallback
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
@@ -29,7 +28,7 @@ export const Banner = () => {
       setIsDeleting(false);
       setDelta(500);
     }
-  }, [isDeleting, loopNum, text]);
+  }, [isDeleting, loopNum, text, period]); // `toRotate` is now inside useCallback, so no longer needed in the dependencies
 
   useEffect(() => {
     const ticker = setInterval(() => {
@@ -39,7 +38,11 @@ export const Banner = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [tick, delta]); // Added tick as a dependency
+  }, [tick, delta]); // `tick` is memoized, so no need to worry about unnecessary re-renders
 
-  // ... JSX code
-}
+  return (
+    <div>
+      <h1>{text}</h1>
+    </div>
+  );
+};
