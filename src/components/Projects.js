@@ -16,11 +16,11 @@ export const Projects = () => {
         " AI-powered chatbot using Botpress",
         " Next.js frontend for smooth UI",
         " Smart mentor-matching algorithm",
-        "Tech Stack: React.js, Next.js, Botpress, MongoDB, Python"
+        "Tech Stack: React.js, Next.js, Botpress,Firebase, MongoDB, Python"
       ],
       imgUrl: projImg1,
-      link: "https://github.com/yourrepo", 
-      liveDemo: "https://yourlivedemo.com",
+      link: "https://github.com/msyed74/jobnexusafterhackathonf", 
+      liveDemo: "https://jobnexusss.netlify.app",
     },
     {
       title: "Campus-Connect",
